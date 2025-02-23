@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart Checkout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #6c5ce7;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 20px;
+            padding: 30px;
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 30px;
+        }
+
+        .back-button {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 18px;
+            margin-bottom: 30px;
+            text-decoration: none;
+            color: #000;
+        }
+
+        .cart-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .cart-subtitle {
+            color: #cdc8ca;
+            margin-bottom: 30px;
+        }
+
+        .cart-item {
+            display: grid;
+            grid-template-columns: 100px 1fr auto auto auto;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .cart-item img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .price {
+            font-weight: bold;
+        }
+
+        .delete-button {
+            color: #666;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .card-details {
+            background-color: #6c5ce7;
+            padding: 30px;
+            border-radius: 15px;
+            color: white;
+        }
+
+        .card-details h2 {
+            margin-bottom: 30px;
+        }
+
+        .payment-methods {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .payment-method {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 8px;
+            width: 70px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .cvv-date-group {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 10px;
+        }
+
+        .total-section {
+            margin-top: 30px;
+        }
+
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .checkout-button {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background-color: #98ffae;
+            color: black;
+            font-size: 18px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="cart-section">
+            <a href="#" class="back-button">← Shopping Continue</a>
+            <h1 class="cart-title">Shopping cart</h1>
+            <p class="cart-subtitle">You have 3 item in your cart</p>
+            
+            <div class="cart-item">
+                <img src="image 1.jpg" alt="Azel 80 Capsule">
+                <h3>Azel 80 Capsule</h3>
+                <div class="quantity-control">
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                </div>
+                <span class="price">₹ 681</span>
+                <button class="delete-button">🗑</button>
+            </div>
+
+            <div class="cart-item">
+                <img src="image 2.png" alt="Alecensa">
+                <h3>Alecensa 150mg Capsule</h3>
+                <div class="quantity-control">
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                </div>
+                <span class="price">₹ 681</span>
+                <button class="delete-button">🗑</button>
+            </div>
+
+            <div class="cart-item">
+                <img src="image 3.jpg" alt="Augmentin">
+                <h3>Augmentin 625 Duo Tablet</h3>
+                <div class="quantity-control">
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                </div>
+                <span class="price">₹ 681</span>
+                <button class="delete-button">🗑</button>
+            </div>
+        </div>
+
+        <div class="card-details">
+            <h2>Card Details</h2>
+            <div class="payment-methods">
+                <div class="payment-method">MC</div>
+                <div class="payment-method">VISA</div>
+                <div class="payment-method">RuPay</div>
+                <div class="payment-method">See all</div>
+            </div>
+
+            <div class="form-group">
+                <label>Name on card</label>
+                <input type="text" placeholder="Name">
+            </div>
+
+            <div class="form-group">
+                <label>Card Number</label>
+                <input type="text" value="1111 2222 3333 4444">
+            </div>
+
+            <div class="cvv-date-group">
+                <div class="form-group">
+                    <label>Expiration date</label>
+                    <input type="text" placeholder="mm/yy">
+                </div>
+                <div class="form-group">
+                    <label>CVV</label>
+                    <input type="text" placeholder="123">
+                </div>
+            </div>
+
+            <div class="total-section">
+                <div class="total-row">
+                    <span>Subtotal</span>
+                    <span>₹ 1,668</span>
+                </div>
+                <div class="total-row">
+                    <span>Shipping</span>
+                    <span>₹ 5</span>
+                </div>
+                <div class="total-row">
+                    <span>Total (Tax incl.)</span>
+                    <span>₹ 1,672</span>
+                </div>
+            </div>
+
+            <button class="checkout-button">
+                <span>₹ 1,672</span>
+                <span>Checkout →</span>
+            </button>
+        </div>
+    </div>
+</body>
+</html>
